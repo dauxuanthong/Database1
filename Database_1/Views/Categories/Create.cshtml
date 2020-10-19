@@ -1,0 +1,16 @@
+﻿@model Database_1.Models.Category
+@{
+	ViewBag.Title = "Create";
+}
+<h2>Create a new Category</h2>
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+@using (Html.BeginForm("Create", "Categories", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+	<div class="form-group">
+		@Html.LabelFor(p => p.Name)
+		@Html.TextBoxFor(p => p.Name, new { @class = "form-control" })
+		@Html.ValidationMessageFor(p => p.Name)
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+}

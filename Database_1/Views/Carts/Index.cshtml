@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Database_1.Models.Cart>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th>Cart Id</th>
+		<th>User Id</th>
+		<th>User Name</th>
+		<th>Product Name</th>
+		<th>Delete</th>
+	</tr>
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.Id</td>
+			<td>@item.CustomerId</td>
+			<td>@item.Customer.UserName</td>
+			<td>@item.Product.Name</td>
+			<td>@Html.ActionLink("Delete this product", "Delete", new { id = item.Id })</td>
+		</tr>
+	}
+</table>

@@ -1,0 +1,22 @@
+﻿@model Database_1.ViewModels.CartViewModel
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<!--
+@using (Html.BeginForm("Edit", "Carts", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+	@Html.HiddenFor(p => p.Cart.Id)
+	<div class="form-group">
+		@Html.LabelFor(p => p.Cart.Product.Name)
+		@Html.DropDownListFor(p => p.Cart.ProductId,
+		 new SelectList(Model.Products, "Id", "Name"),
+		 "Select Product Name",
+		 new { @class = "form-control" })
+	</div>
+	<button type="submit" class="btn btn-primary">Edit</button>
+}
+-->
